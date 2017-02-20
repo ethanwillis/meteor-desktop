@@ -505,6 +505,17 @@ will be using it.
 The `:platform` and `:version` tags are automatically replaced by correct values.   
 You can hook into Squirrel Windows events in `squirrelEvents.js` in `.desktop`.
 
+From the client side you can poll for new updates like so
+```
+  num_min = 5;
+
+  setInterval(function() {
+
+    Desktop.send("autoupdate", "checkForUpdates");
+
+  }, 60000 * num_min);
+```
+
 More:  
 https://github.com/electron/electron/blob/master/docs/api/auto-updater.md  
 https://github.com/ArekSredzki/electron-release-server
